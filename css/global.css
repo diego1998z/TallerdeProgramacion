@@ -17,12 +17,41 @@
 	--breakpoint-lg: 992px;
 	--breakpoint-xl: 1200px; 
  }
- /* reseteo inicial a todo el cssglobal*/
+ /* reseteo inicial a todo el proyecto*/
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 body{
-    font-family: "Montserrat", sans-serif; 
+    font-family: var(--default-font); 
+    color:var(--text-color);
+}
+input,
+button,
+textarea,
+select{
+    font-family:var(--default-font);
+}
+input{
+    border:none;
+    outline:none;
+
+}
+/*UTILS*/
+.containers{
+	max-width:1200px;
+	margin: 0 auto;	
+}
+.background-dark-1{
+	background-color: var(--dark-color-divider);
+}
+.backgroud-dark-2{
+	background-color:var(--color-secondary);
+}
+section{
+	padding:100px 0;
+	@media(max-widht:992px){
+		padding 50px 15px;
+	}
 }
