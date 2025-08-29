@@ -1,0 +1,61 @@
+/*Seccion del hero*/
+.hero-banner{
+    background-image:url(../images/home/hero-bg.png);
+    background-size:cover;
+    background-position:center;
+    height:100vh;
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    z-index: 1;
+    /*es igual que poner.container*/
+    &>div {
+        display:flex;
+        align-items: center;
+        gap:100px;
+    }
+    .content{
+        /*el elemento  tomara el espacio sobrante de manera equitativa
+        con otros elementos flex:1*/
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        gap: 15px;
+
+        H1 {
+            width: 90%;
+            font-size: 60px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            font-weight: 800;
+            text-shadow:1px 1px 1px rgba(0,0,0.3);
+            color:var(--color-light);
+            span{
+                color:var(--color-primary); 
+            }        
+        }  
+        p{
+         font-size: 18px;
+         line-height: 1.5;
+        } 
+        .container-button{
+         margin-top:40px;
+         align-self:flex-start;
+        }
+    }
+    .container-images{
+        flex: 1;
+        position:relative;
+        margin-top:50px;
+        .main-image{
+            width: 100%;
+            height:100%;
+            object-fit: cover;
+            border-radius:999px;
+        }          
+    }
+
+
+}
