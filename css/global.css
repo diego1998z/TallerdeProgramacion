@@ -39,6 +39,7 @@ input{
 
 }
 /*UTILS*/
+/*container es donde va los textos*/
 .containers{
 	max-width:1200px;
 	margin: 0 auto;	
@@ -64,7 +65,8 @@ input{
 		font-size: 26px;
 		font-weight: 600;
 	}
-}
+} 
+/*personalizacion del boton*/
 .btn{
 	text-decoration: none;
 	padding: 18px 25px;
