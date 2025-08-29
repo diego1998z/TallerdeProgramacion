@@ -43,19 +43,11 @@
         .container-button{
          margin-top:40px;
          align-self:flex-start;
+         display:flex;
+         gap:20px;
         }
     }
-    .container-images{
-        flex: 1;
-        position:relative;
-        margin-top:50px;
-        .main-image{
-            width: 100%;
-            height:100%;
-            object-fit: cover;
-            border-radius:999px;
-        }          
-    }
+    
 
 
 }
