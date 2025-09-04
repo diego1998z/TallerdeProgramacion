@@ -1,108 +1,286 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-:root{
-	/* variables a cada color usado en todo el proyecto*/
-    --color-primary: #a6a182;
-	--color-secondary: #1f2120;
-	--text-color: #aeb0b4;
-	--color-light: #fff;
-	--color-divider: #ffffff1a;
-	--dark-color-divider: #0e110d;
-	/* Fuentes */
-	--default-font: 'Hanken Grotesk', serif;
-	/* Breakpoints */
-	--breakpoint-sm: 576px;
-    /*tablet y celulares*/
-	--breakpoint-md: 768px;
-    /*Pequeñas laptops*/
-	--breakpoint-lg: 992px;
-	--breakpoint-xl: 1200px; 
- }
- /* reseteo inicial a todo el proyecto*/
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  /* variables a cada color usado en todo el proyecto*/
+  --color-primary: #a6a182;
+  --color-secondary: #1f2120;
+  --text-color: #aeb0b4;
+  --color-light: #fff;
+  --color-divider: #ffffff1a;
+  --dark-color-divider: #0e110d;
+  /* Fuentes */
+  --default-font: "Hanken Grotesk", serif;
+  /* Breakpoints */
+  --breakpoint-sm: 576px;
+  /*tablet y celulares*/
+  --breakpoint-md: 768px;
+  /*Pequeñas laptops*/
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
 }
-body{
-    font-family: var(--default-font); 
-    color:var(--text-color);
+/* reseteo inicial a todo el proyecto*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: var(--default-font);
+  color: var(--text-color);
 }
 input,
 button,
 textarea,
-select{
-    font-family:var(--default-font);
+select {
+  font-family: var(--default-font);
 }
-input{
-    border:none;
-    outline:none;
-
+input {
+  border: none;
+  outline: none;
 }
 /*UTILS*/
 /*container es donde va los textos*/
-.containers{
-	max-width:1200px;
-	margin: 0 auto;	
+.containers {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.background-dark-1{
-	background-color: var(--dark-color-divider);
+.background-dark-1 {
+  background-color: var(--dark-color-divider);
 }
-.backgroud-dark-2{
-	background-color:var(--color-secondary);
+.backgroud-dark-2 {
+  background-color: var(--color-secondary);
 }
 .container-logo {
-	display:flex;
-	align-items: center;
-	gap: 20px;
-	text-decoration: none;
-	img{
-		width: 50px ;
-		height:50px;
-		object-fit: cover;
-	}
-	span{
-		color:var(--color-light);
-		font-size: 26px;
-		font-weight: 600;
-	}
-} 
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  span {
+    color: var(--color-light);
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
 /*personalizacion del boton*/
-.btn{
-	text-decoration: none;
-	padding: 18px 25px;
-	text-transform: capitalize;
-	border-radius: 9999px;
-	display:flex;
-	align-items: center;
-	gap:10px;
-	font-weight: 700;
-	font-size: 16px;
-	transition: background-color 0.3s;
-	&.btn-primary{
-		background-color: var(--color-primary);
-		color:var(--color-light);
-		position:relative;
-		&:hover{
-			background-color:var(--color-light) ;
-			color:var(--dark-color-divider);
-		}
-
-	}
-	&.btn-secondary{
-		background-color: var(--color-light);
-		color:var(--dark-color-divider);
-		position:relative;
-		&:hover{
-			background-color:var(--color-primary) ;
-			color:var(--dark-light);
-		}
-
-	}
-
+.btn {
+  text-decoration: none;
+  padding: 18px 25px;
+  text-transform: capitalize;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  &.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    position: relative;
+    &:hover {
+      background-color: var(--color-light);
+      color: var(--dark-color-divider);
+    }
+  }
+  &.btn-secondary {
+    background-color: var(--color-light);
+    color: var(--dark-color-divider);
+    position: relative;
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--dark-light);
+    }
+  }
 }
-section{
-	padding:100px 0;
-	@media(max-widht:992px){
-		padding: 50px 15px;
-	}
+section {
+  padding: 100px 0;
+  @media (max-widht: 992px) {
+    padding: 50px 15px;
+  }
 }
+/* ===== Secciones base ===== */
+.section-title {
+  color: var(--color-light);
+  font-size: clamp(28px, 3.2vw, 40px);
+  margin-bottom: 10px;
+}
+.section-subtitle {
+  color: var(--text-color);
+  margin-bottom: 24px;
+  max-width: 60ch;
+}
+.section-acerca {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, #191b1a 100%);
+}
+.section-servicios {
+  background: #181a19;
+}
+.section-menu {
+  background: #161817;
+}
+.section-contacto {
+  background: #141615;
+}
+
+/* Acerca */
+.acerca-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.acerca-card {
+  background: #0001;
+  border: 1px solid var(--color-divider);
+  border-radius: 14px;
+  padding: 16px;
+}
+.acerca-card h3 {
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+/* Servicios */
+.servicios-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.servicio {
+  background: #0001;
+  border: 1px solid var(--color-divider);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+}
+.servicio-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+  color: var(--color-primary);
+}
+
+/* Menú */
+/* ===== MENÚ (tablas con imágenes) ===== */
+.menu-subtitle {
+  color: var(--color-primary);
+  margin: 14px 0 8px;
+  font-weight: 700;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--color-divider);
+  border-radius: 12px;
+  background: #00000010;
+  margin-bottom: 18px;
+}
+
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 720px;
+}
+.menu-table th,
+.menu-table td {
+  padding: 12px 16px;
+  border: 1px solid var(--color-divider);
+  text-align: left;
+  vertical-align: middle;
+}
+.menu-table th {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  font-weight: 600;
+}
+.menu-table td {
+  color: var(--text-color);
+}
+.menu-table tr:nth-child(even) {
+  background-color: #00000015;
+}
+.menu-table tr:hover {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  transition: 0.3s;
+}
+
+/* ===== Celda de Imagen ===== */
+.menu-table .thumb {
+  width: 92px;
+}
+.menu-table .thumb img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--color-divider);
+  background: #00000020;
+  display: block;
+}
+
+/* ===== Variante Selección del Chef ===== */
+.menu-table--chef th {
+  background: linear-gradient(0deg, var(--color-secondary), #1a1c1b);
+  box-shadow: inset 0 -2px 0 0 var(--color-primary);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .menu-table {
+    min-width: 640px;
+  }
+}
+@media (max-width: 576px) {
+  .menu-table {
+    min-width: 560px;
+  }
+}
+
+/* Contacto */
+.contacto-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+.contacto-form {
+  display: grid;
+  gap: 12px;
+}
+.contacto-form input,
+.contacto-form textarea {
+  background: #0002;
+  border: 1px solid var(--color-divider);
+  border-radius: 12px;
+  padding: 10px;
+  color: var(--color-light);
+}
+.contacto-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--color-divider);
+}
+.reserva-form {
+  display: grid;
+  gap: 14px;
+}
+.reserva-form input,
+.reserva-form textarea {
+  background: #00000015;
+  border: 1px solid var(--color-divider);
+  border-radius: 12px;
+  padding: 10px 12px;
+  color: var(--color-light);
+}
+.reserva-form input:focus,
+.reserva-form textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
